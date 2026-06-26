@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>送给张金扬</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    font-family:"Microsoft YaHei";
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-top:40px;
+    font-size:48px;
+}
+
+p{
+    text-align:center;
+    color:white;
+    font-size:22px;
+}
+
+.word{
+    position:absolute;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+    animation:fly 8s linear forwards;
+    text-shadow:2px 2px 8px black;
+}
+
+@keyframes fly{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:1;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>送给张金扬</h1>
+
+<p>高考只是人生的一站，不是终点。</p>
+
+<script>
+
+const words=[
+
+"张金扬，加油！",
+"一次考试不能定义你。",
+"未来一定属于努力的人！",
+"真正的强者，从不害怕重新开始。",
+"愿你前程似锦！",
+"保持热爱，奔赴山海！",
+"愿梦想终将实现！",
+"金榜题名！",
+"前途无限！",
+"相信自己！",
+"人生处处有精彩！",
+"今天的努力，是明天的底气！",
+"永远不要放弃！",
+"你的未来值得期待！",
+"少年自有凌云志！",
+"祝你被理想大学录取！",
+"愿所有努力都有回报！",
+"高考不是终点！",
+"未来可期！",
+"张金扬，你一定可以！"
+
+];
+
+function createWord(){
+
+    let div=document.createElement("div");
+
+    div.className="word";
+
+    div.innerText=words[Math.floor(Math.random()*words.length)];
+
+    div.style.left=Math.random()*90+"%";
+
+    div.style.fontSize=(20+Math.random()*30)+"px";
+
+    div.style.animationDuration=(5+Math.random()*6)+"s";
+
+    document.body.appendChild(div);
+
+    setTimeout(()=>{
+        div.remove();
+    },10000);
+
+}
+
+setInterval(createWord,300);
+
+</script>
+
+</body>
+</html>
